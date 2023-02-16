@@ -1,0 +1,19 @@
+{
+  "libpath": "/plugin/plugin.so",
+  "enable_metrics": true,
+  "metrics_port": 8125,
+  "metrics_uri": "graphite",
+  "env": "dev",
+  "accounts_selector": {
+    "owners": [
+      "CDDMdCAWB5AXgvEy7XJRggAu37QPG1b9aJXndZoPUkkm",
+      "41kNwkQ9jESNYZJyAA1ENscQfx7vfkEf6uetVSFmfyaW"
+    ]
+  },
+  "transaction_selector": {
+    "mentions": [
+      "CDDMdCAWB5AXgvEy7XJRggAu37QPG1b9aJXndZoPUkkm",
+      "41kNwkQ9jESNYZJyAA1ENscQfx7vfkEf6uetVSFmfyaW"
+    ]
+  }
+}
