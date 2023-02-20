@@ -26,6 +26,14 @@ services:
     image: "redis:6.2.5"
     ports:
       - "6379:6379"
+  migrator:
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://solana:solana@db/solana
+    build:
+      context: .
+      dockerfile: Migrator.Dockerfile
   db:
     image: "postgres:latest"
     command:
