@@ -9,4 +9,5 @@ pub use super::profile_metadata::Entity as ProfileMetadata;
 pub use super::raw_txn::Entity as RawTxn;
 pub use super::reaction::Entity as Reaction;
 pub use super::tasks::Entity as Tasks;
+pub use super::tree_config::Entity as TreeConfig;
 pub use super::users::Entity as Users;
