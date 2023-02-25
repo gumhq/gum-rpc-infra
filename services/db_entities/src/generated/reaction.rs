@@ -13,6 +13,10 @@ pub struct Model {
     pub created_at: DateTimeWithTimeZone,
     pub slot_updated_at: i64,
     pub burnt: bool,
+    pub compressed: bool,
+    pub tree_id: Option<Vec<u8>>,
+    pub leaf: Option<Vec<u8>>,
+    pub nonce: i64,
 }
 
 #[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]

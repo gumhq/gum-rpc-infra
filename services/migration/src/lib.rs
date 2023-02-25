@@ -7,6 +7,7 @@ mod m20230225_131241_add_tree_config;
 mod m20230225_134136_add_created_updated_gum;
 mod m20230225_143442_add_burnt_gum;
 mod m20230225_144330_add_user_transfer_log;
+mod m20230225_163111_add_gum_compression;
 
 pub struct Migrator;
 
@@ -21,6 +22,7 @@ impl MigratorTrait for Migrator {
             Box::new(m20230225_134136_add_created_updated_gum::Migration),
             Box::new(m20230225_143442_add_burnt_gum::Migration),
             Box::new(m20230225_144330_add_user_transfer_log::Migration),
+            Box::new(m20230225_163111_add_gum_compression::Migration),
         ]
     }
 }
