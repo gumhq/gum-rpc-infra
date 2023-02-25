@@ -3,41 +3,46 @@
 use sea_orm::entity::prelude::*;
 
 #[derive(Clone, Debug, PartialEq, DeriveEntityModel, Eq)]
-#[sea_orm(table_name = "post")]
+#[sea_orm(table_name = "reaction")]
 pub struct Model {
     #[sea_orm(primary_key, auto_increment = false)]
     pub id: Vec<u8>,
-    pub profile: Vec<u8>,
-    pub random_hash: Vec<u8>,
-    pub reply_to: Option<Vec<u8>>,
-    pub metadata_uri: String,
-    #[sea_orm(column_type = "JsonBinary")]
-    pub metadata_uri_content: Json,
+    pub from_profile: Vec<u8>,
+    pub to_post: Vec<u8>,
+    pub reaction_type: String,
+    pub created_at: DateTimeWithTimeZone,
+    pub slot_updated_at: i64,
 }
 
 #[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]
 pub enum Relation {
     #[sea_orm(
+        belongs_to = "super::post::Entity",
+        from = "Column::ToPost",
+        to = "super::post::Column::Id",
+        on_update = "NoAction",
+        on_delete = "NoAction"
+    )]
+    Post,
+    #[sea_orm(
         belongs_to = "super::profile::Entity",
-        from = "Column::Profile",
+        from = "Column::FromProfile",
         to = "super::profile::Column::Id",
         on_update = "NoAction",
         on_delete = "NoAction"
     )]
     Profile,
-    #[sea_orm(has_many = "super::reaction::Entity")]
-    Reaction,
+}
+
+impl Related<super::post::Entity> for Entity {
+    fn to() -> RelationDef {
+        Relation::Post.def()
+    }
 }
 
 impl Related<super::profile::Entity> for Entity {
     fn to() -> RelationDef {
         Relation::Profile.def()
-    }
-}
-
-impl Related<super::reaction::Entity> for Entity {
-    fn to() -> RelationDef {
-        Relation::Reaction.def()
     }
 }
 

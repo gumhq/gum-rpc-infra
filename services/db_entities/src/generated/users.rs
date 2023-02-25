@@ -3,25 +3,19 @@
 use sea_orm::entity::prelude::*;
 
 #[derive(Clone, Debug, PartialEq, DeriveEntityModel, Eq)]
-#[sea_orm(table_name = "profile_metadata")]
+#[sea_orm(table_name = "users")]
 pub struct Model {
     #[sea_orm(primary_key, auto_increment = false)]
     pub id: Vec<u8>,
-    pub profile: Vec<u8>,
-    pub metadata_uri: String,
-    #[sea_orm(column_type = "JsonBinary")]
-    pub metadata_uri_content: Json,
+    pub authority: Vec<u8>,
+    pub random_hash: Vec<u8>,
+    pub created_at: DateTimeWithTimeZone,
+    pub slot_updated_at: i64,
 }
 
 #[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]
 pub enum Relation {
-    #[sea_orm(
-        belongs_to = "super::profile::Entity",
-        from = "Column::Profile",
-        to = "super::profile::Column::Id",
-        on_update = "NoAction",
-        on_delete = "NoAction"
-    )]
+    #[sea_orm(has_many = "super::profile::Entity")]
     Profile,
 }
 

@@ -9,6 +9,8 @@ pub struct Model {
     pub id: Vec<u8>,
     pub user: Vec<u8>,
     pub namespace: String,
+    pub created_at: DateTimeWithTimeZone,
+    pub slot_updated_at: i64,
 }
 
 #[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]
