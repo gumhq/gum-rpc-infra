@@ -12,6 +12,7 @@ pub struct Model {
     pub reaction_type: String,
     pub created_at: DateTimeWithTimeZone,
     pub slot_updated_at: i64,
+    pub burnt: bool,
 }
 
 #[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]

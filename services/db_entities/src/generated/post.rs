@@ -15,6 +15,7 @@ pub struct Model {
     pub metadata_uri_content: Json,
     pub created_at: DateTimeWithTimeZone,
     pub slot_updated_at: i64,
+    pub burnt: bool,
 }
 
 #[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]

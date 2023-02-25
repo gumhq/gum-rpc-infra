@@ -11,6 +11,7 @@ pub struct Model {
     pub namespace: String,
     pub created_at: DateTimeWithTimeZone,
     pub slot_updated_at: i64,
+    pub burnt: bool,
 }
 
 #[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]
