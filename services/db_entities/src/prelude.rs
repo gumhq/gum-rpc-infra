@@ -2,5 +2,11 @@
 
 pub use super::backfill_items::Entity as BackfillItems;
 pub use super::cl_items::Entity as ClItems;
+pub use super::connection::Entity as Connection;
+pub use super::post::Entity as Post;
+pub use super::profile::Entity as Profile;
+pub use super::profile_metadata::Entity as ProfileMetadata;
 pub use super::raw_txn::Entity as RawTxn;
+pub use super::reaction::Entity as Reaction;
 pub use super::tasks::Entity as Tasks;
+pub use super::users::Entity as Users;

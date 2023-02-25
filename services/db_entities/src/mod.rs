@@ -4,6 +4,12 @@ pub mod prelude;
 
 pub mod backfill_items;
 pub mod cl_items;
+pub mod connection;
+pub mod post;
+pub mod profile;
+pub mod profile_metadata;
 pub mod raw_txn;
+pub mod reaction;
 pub mod sea_orm_active_enums;
 pub mod tasks;
+pub mod users;
