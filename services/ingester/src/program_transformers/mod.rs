@@ -1,19 +1,15 @@
-mod instruction;
-mod utils;
-
-use instruction::order_instructions;
-pub use instruction::{InstructionBundle, IxPair};
-
-use utils::ProgramParser;
-pub use utils::ProgramParserError;
-
 use crate::{error::IngesterError, TaskData};
+use gpl_parser::instruction::order_instructions;
+use gpl_parser::instruction::InstructionBundle;
+use gpl_parser::instruction::IxPair;
+use gpl_parser::program_handler::ProgramParser;
 use plerkle_serialization::{AccountInfo, Pubkey as FBPubkey, TransactionInfo};
 use sea_orm::{DatabaseConnection, SqlxPostgresConnector};
 use solana_sdk::pubkey::Pubkey;
 use sqlx::PgPool;
 use std::collections::{HashMap, HashSet, VecDeque};
 use tokio::sync::mpsc::UnboundedSender;
+// use gpl_parser::{I}
 
 pub struct ProgramTransformer {
     storage: DatabaseConnection,

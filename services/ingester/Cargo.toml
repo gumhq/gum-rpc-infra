@@ -33,3 +33,4 @@ reqwest = "0.11.14"
 url = "2.3.1"
 spl-account-compression = { version = "0.1.8", features = ["no-entrypoint"] }
 db_entities = { version = "0.1.0", path = "../db_entities" }
+gpl_parser = { version = "0.1.0", path = "../../libraries/gpl_parser" }

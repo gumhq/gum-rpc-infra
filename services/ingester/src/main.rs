@@ -6,7 +6,9 @@ mod tasks;
 use crate::error::IngesterError;
 use crate::metrics::safe_metric;
 use crate::program_transformers::ProgramTransformer;
-use crate::program_transformers::{InstructionBundle, IxPair};
+
+use gpl_parser::instruction::InstructionBundle;
+use gpl_parser::instruction::IxPair;
 
 use crate::tasks::common::task::DownloadMetadataTask;
 use crate::tasks::BgTask;

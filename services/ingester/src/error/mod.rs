@@ -1,5 +1,5 @@
-use crate::program_transformers::ProgramParserError;
 use crate::TaskData;
+use gpl_parser::error::ProgramParserError;
 use plerkle_messenger::MessengerError;
 use sea_orm::DbErr;
 use sea_orm::TransactionError;
